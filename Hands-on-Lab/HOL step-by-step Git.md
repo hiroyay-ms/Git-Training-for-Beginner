@@ -3,57 +3,46 @@
 Hands-on lab  
 Mar 2021
 
-<br />
+## **Contents**
 
-**Contents**
-
- 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
-- [**要約および学習目標**](#要約および学習目標)
-    - [**事前準備**](#事前準備)
-- [**Git リポジトリの作成から Commit まで**](#git-リポジトリの作成から-commit-まで)
-  - [Git リポジトリの作成と Initial Commit](#git-リポジトリの作成と-initial-commit)
-  - [ファイルの作成と編集](#ファイルの作成と編集)
-  - [Stage](#stage)
-  - [Commit](#commit)
-- [**Branch の作成から Merge まで**](#branch-の作成から-merge-まで)
-  - [Branch の作成](#branch-の作成)
-  - [新規ファイルの作成と編集](#新規ファイルの作成と編集)
-  - [Stage & Commit](#stage-commit)
-  - [Merge](#merge)
-- [**Conflict を解決する**](#conflict-を解決する)
-  - [main ブランチへ切り替え](#main-ブランチへ切り替え)
-  - [ファイル編集して Stage & Commit](#ファイル編集して-stage-commit)
-  - [新しい Branch を作成](#新しい-branch-を作成)
-  - [同じファイルを編集して Stage &  Commit](#同じファイルを編集して-stage-commit)
-  - [Mergeする（Conflictさせる)](#mergeするconflictさせる)
-  - [Conflict を解消して Stage & Stage & Commit](#conflict-を解消して-stage-stage-commit)
-- [**間違えた Commit を修正する**](#間違えた-commit-を修正する)
-  - [Stage し忘れたファイルがあった場合](#stage-し忘れたファイルがあった場合)
-  - [Branch を切り忘れて main ブランチに Commit した場合](#branch-を切り忘れて-main-ブランチに-commit-した場合)
-- [**Remote(Bare) リポジトリの作成から Push まで**](#remotebare-リポジトリの作成から-push-まで)
-  - [Remote(Bare) リポジトリの作成](#remotebare-リポジトリの作成)
-  - [Clone](#clone)
-  - [ファイルを新規作成して Stage & Commit](#ファイルを新規作成して-stage-commit)
-  - [Push](#push)
-- [**Challenge Remote リポジトリに誰かが先に Push してしまった場合のエラーを解消する**](#challenge-remote-リポジトリに誰かが先に-push-してしまった場合のエラーを解消する)
+- [**準備**](#準備)
+- [**Exercise 1**](#exercise-1)
+  - [ローカルリポジトリを作成し、ファイルを Commit する](#ローカルリポジトリを作成しファイルを-commit-する)
+  - [Exercise 1 達成条件](#exercise-1-達成条件)
+- [**Exercise 2**](#exercise-2)
+  - [Branch を作成して Commit すること](#branch-を作成して-commit-すること)
+  - [Exercise 2 達成条件](#exercise-2-達成条件)
+- [**Exercise 3**](#exercise-3)
+  - [Merge する](#merge-する)
+  - [Exercise 3 達成条件](#exercise-3-達成条件)
+- [**Exercise 4**](#exercise-4)
+  - [merge で Conflict を発生させて解決する](#merge-で-conflict-を発生させて解決する)
+  - [Exercise 4 達成条件](#exercise-4-達成条件)
+- [**Exercise 5**](#exercise-5)
+  - [リモートリポジトリを作成してローカルリポジトリと同期する](#リモートリポジトリを作成してローカルリポジトリと同期する)
+  - [Exercise 5 達成条件](#exercise-5-達成条件)
+- [**Exercise 6**](#exercise-6)
+  - [リモートリポジトリから Clone してから Push する](#リモートリポジトリから-clone-してから-push-する)
+  - [Exercise 6 達成条件](#exercise-6-達成条件)
+- [**Exercise 7**](#exercise-7)
+  - [Commit を 取り消す](#commit-を-取り消す)
+  - [Exercise 7 達成条件](#exercise-7-達成条件)
+- [**Exercise 8**](#exercise-8)
+  - [Merge を 取り消す](#merge-を-取り消す)
+  - [Exercise 8 達成条件](#exercise-8-達成条件)
+- [**Challenge Exercise**](#challenge-exercise)
+  - [Branch を切り損ねた対応をする](#branch-を切り損ねた対応をする)
 
 <!-- /code_chunk_output -->
 
-
-<br />
-
-# **要約および学習目標**
-
-### **事前準備**
+# **準備**
 
 - ローカル環境
   - Visual Studio Code のインストール
-
-    Visual Studio Code  
     <https://azure.microsoft.com/ja-jp/products/visual-studio-code/>
 
   - Git のインストール  
@@ -62,135 +51,213 @@ Mar 2021
   - Git Graph のインストール (VS Code プラグイン)
     <https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph>
 
-<br />
+***
+
+# **Exercise 1**
+
+## ローカルリポジトリを作成し、ファイルを Commit する
+
+- ローカルリポジトリは C:\gitroot フォルダ配下に作成してください。
+- ローカルリポジトリ名は firstRepo としてください。
+- Commit を２つ作ってください。
+- 1つ目の Commit について
+  - 作成するファイル名は file1.txt としてください。
+  - file1.txt には以下の内容を保存してください。
+
+  ```text
+  first line in file1
+  ```
+
+  - Commit メッセージには以下を入力してください。
+
+  ```text
+  add file1
+  - file1.txtを追加
+  ```
+
+- 2つ目の Commit について
+  - 作成するファイル名は file2.txt としてください。
+  - file2.txt には以下の内容を保存してください。
+
+  ```text
+  first line in file2
+  ```
+
+  - Commit メッセージには以下を入力してください。
+
+  ```text
+  add file2
+
+  - file2.txtを追加
+  ```
+
+## Exercise 1 達成条件
+
+- C:\gitroot\firstRepo がリポジトリになっていること
+- file1.txt が Commit されていること
+- Commit ログが２つあり、それぞれの Commit の内容が指定通りであること
+- コーチが結果を確認して OK であること
 
 ***
 
-# **Git リポジトリの作成から Commit まで**
+# **Exercise 2**
 
-## Git リポジトリの作成と Initial Commit
+## Branch を作成して Commit すること
 
-aaa
+- Exercise 1 の２つ目の Commit から Branch を作ってください。
+- Branch 名は BranchA としてください。
+- BranchA ブランチで file2.txt を以下の内容に編集して Commit してください。
 
-## ファイルの作成と編集
+  ```text
+  first line in file2
+  this line was add in branchA
+  ```
 
-aaa
+  - Commit メッセージには作業内容をわかりやすく入力してください。
 
-## Stage
+- main ブランチ に切り替えてください。
+- file1.txt を以下の内容に編集して Commit してください。
 
-aaa
+  ```text
+  first line in file1
+  this line was add in main
+  ```
 
-## Commit
+  - Commit メッセージには作業内容をわかりやすく入力してください。
 
-aaa
+## Exercise 2 達成条件
 
-***
-
-# **Branch の作成から Merge まで**
-
-## Branch の作成
-
-aaa
-
-## 新規ファイルの作成と編集
-
-aaa
-
-## Stage & Commit
-
-aaa
-
-## Merge
-
-aaa
+- BranchA に Commit が１つあること
+- main に Commit が３つあること
+- コーチが結果を確認して OK であること
 
 ***
 
-# **Conflict を解決する**
+# **Exercise 3**
 
-## main ブランチへ切り替え
+## Merge する
 
-aaa
+- branchA ブランチを main ブランチへ merge してください。
+- merge する時の Commit メッセージは適切なものを自分で入力してください。
+- merge 後、 branchA を削除してください。
 
-## ファイル編集して Stage & Commit
+## Exercise 3 達成条件
 
-aaa
+- Conflict することなく merge が完了した
+- branchA が削除されていること
+- file1.txt の内容が下記になっていること
 
-## 新しい Branch を作成
+  ```text
+  first line in file1
+  this line was add in main
+  ```
 
-aaa
+- file2.txt の内容が下記になっていること
 
-## 同じファイルを編集して Stage &  Commit
-
-aaa
-
-## Mergeする（Conflictさせる)
-
-aaa
-
-## Conflict を解消して Stage & Stage & Commit
-
-aaa
-
-***
-
-# **間違えた Commit を修正する**
-
-以下の手順は、Remote リポジトリに Push する前であれば有効な手順です。もし Push してしまった場合は Commit を取り消すための Commit である「 Revert 」を使用します。
-
-## Stage し忘れたファイルがあった場合
-
-Commit を削除して、Stage した直後の状態になります。
-```powershell
-git reset --soft HEAD^
+```text
+  first line in file2
+  this line was add in branchA
 ```
 
-この手順を応用すると、Commit してはいけなかったファイルを Commit から取り除くこともできます。
-
-**注意**
-これは最新の Commit をミスしてしまった場合の手順です。２つ前以上古い履歴の Commit への修正は　コマンドを使用してできないわけではありませんが、お勧めしません。
-
-
-## Branch を切り忘れて main ブランチに Commit した場合
-
-慌てないで、その場ですぐ新しい Branch を作ります。
-
-```powershell
-git branch newBranch
-```
-
-main ブランチを１つ前の状態に戻します。最後のコミットは 新しい Branch が参照しているため、消えることはありません。
-
-```powershell
-git reset --hard HEAD^
-```
-
-この手順では１つだけ Commit してしまった場合に対応していますが、複数回前の Commit から Branch を切ることもできます。
-(main ブランチを戻した位置が、Branchを切りたかった Commitになる)
+- コーチが結果を確認して OK であること
 
 ***
 
-# **Remote(Bare) リポジトリの作成から Push まで**
+# **Exercise 4**
 
-## Remote(Bare) リポジトリの作成
+## merge で Conflict を発生させて解決する
 
-aaa
+- file3.txt を main ブランチに追加して Commit してください。
+  - file3.txt には以下の内容を保存してください。
+  - Commit メッセージはわかりやすいものにしてください。
 
-## Clone
+  ```text
+  first line in main
+  ```
 
-aaa
+- file3.txt を追加した Commit に対して Branch を切ってください。
+- Branch 名は BranchB としてください。
+- Branch で file3.txt を次のように編集して Commit してください
 
-## ファイルを新規作成して Stage & Commit
+  ```text
+  first line in branchB
+  ```
 
-aaa
+- branchB ブランチを main ブランチへ merge してください。
+- file3.txt のConflict を次のように解決してください。
 
-## Push
+  ```text
+  first line in main
+  second line in branchB
+  ```
 
-aaa
+- merge 時の Commit メッセージは適切なものを自分で入力してください。
+- merge 後、 branchB を削除してください。
+
+## Exercise 4 達成条件
+
+- Conflict を解決して merge が完了したこと
+- branchB が削除されていること
+- file3.txt の内容が下記になっていること
+
+  ```text
+  first line in main
+  second line in branchB
+  ```
+
+- コーチが結果を確認して OK であること
 
 ***
 
-# **Challenge Remote リポジトリに誰かが先に Push してしまった場合のエラーを解消する**
+# **Exercise 5**
+
+## リモートリポジトリを作成してローカルリポジトリと同期する
+
+- aaa
+
+## Exercise 5 達成条件
+
+- aaa
+
+***
+
+# **Exercise 6**
+
+## リモートリポジトリから Clone してから Push する
+
+- aaa
+
+## Exercise 6 達成条件
+
+- aaa
+
+# **Exercise 7**
+
+## Commit を 取り消す
+
+- aaa
+
+## Exercise 7 達成条件
+
+- aaa
+
+***
+
+# **Exercise 8**
+
+## Merge を 取り消す
+
+- aaa
+
+## Exercise 8 達成条件
+
+- aaa
+
+***
+
+# **Challenge Exercise**
+
+## Branch を切り損ねた対応をする
 
 直上の手順で作成した Remote リポジトリに対して、誰かが自分より先にコードを Push してしまった状態を作ります。
 
@@ -201,4 +268,3 @@ aaa
 エラーが発生します。このエラーを解消してください。
 
 - Conflict は第三者の編集内容を２行目として解消してください。
-
