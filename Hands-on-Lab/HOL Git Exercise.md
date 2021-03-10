@@ -49,13 +49,13 @@ Mar 2021
 # **準備**
 
 - ローカル環境
-  - Visual Studio Code のインストール
+  - Visual Studio Code のインストール  
     <https://azure.microsoft.com/ja-jp/products/visual-studio-code/>
 
   - Git のインストール  
     <https://git-scm.com/>
 
-  - Git Graph のインストール (VS Code プラグイン)
+  - Git Graph のインストール (VS Code プラグイン)  
     <https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph>
 
 ***
