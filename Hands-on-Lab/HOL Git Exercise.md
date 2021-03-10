@@ -34,7 +34,7 @@ Mar 2021
 - [**Exercise 8 - Commit を Revert して Push する**](#exercise-8---commit-を-revert-して-push-する)
   - [Exercise 8 内容](#exercise-8-内容)
   - [Exercise 8 達成条件](#exercise-8-達成条件)
-- [**Exercise 9 - Commit を 取り消す**](#exercise-9---commit-を-取り消す)
+- [**Exercise 9 - Commit を取り消すが編集内容は残す**](#exercise-9---commit-を取り消すが編集内容は残す)
   - [Exercise 9 内容](#exercise-9-内容)
   - [Exercise 9 達成条件](#exercise-9-達成条件)
 - [**Exercise 10 - Conflict した Merge を 取り消す**](#exercise-10---conflict-した-merge-を-取り消す)
@@ -102,11 +102,11 @@ Mar 2021
 
 ## Exercise 1 達成条件
 
+- コーチが以下を確認して OK であること
 - C:\gitroot\firstRepo がリポジトリになっていること
 - file1.txt が Commit されていてファイルの内容が指示通りであること
 - file2.txt が Commit されていてファイルの内容が指示通りであること
 - Commit ログが２つあり、最初の Commit には file1.txt だけが保持されており、２つ目の Commit には file2.txt が保持されていること
-- コーチが結果を確認して OK であること
 
 ***
 
@@ -137,9 +137,20 @@ Mar 2021
 
 ## Exercise 2 達成条件
 
-- BranchA に Commit が１つあり file2.txt の内容が指示通りであること
-- main に Commit が３つあり file1.txt の内容が指示通りであること
-- コーチが結果を確認して OK であること
+- コーチが以下を確認して OK であること
+- BranchA に Commit が１つあり file2.txt の内容が以下の通りであること
+
+  ```text
+  This first line is in file2
+  This line was added in branchA
+  ```
+
+- main に Commit が３つあり file1.txt の内容が以下の通りであること
+
+  ```text
+  This first line is in file1
+  This line was added in main
+  ```
 
 ***
 
@@ -152,7 +163,9 @@ Mar 2021
 
 ## Exercise 3 達成条件
 
-- Conflict することなく merge が完了すること
+- コーチが以下を確認して OK であること
+- merge が完了すること
+  - Conflict が発生しなかったこと（口頭確認）
 - branchA が削除されていること
 - file1.txt の内容が下記になっていること
 
@@ -167,8 +180,6 @@ Mar 2021
   first line in file2
   This line was added in branchA
 ```
-
-- コーチが結果を確認して OK であること
 
 ***
 
@@ -217,6 +228,7 @@ Mar 2021
 
 ## Exercise 4 達成条件
 
+- コーチが以下を確認して OK であること
 - Conflict を解決して merge が完了したこと
 - branchB が削除されていること
 - file3.txt の内容が下記になっていること
@@ -226,8 +238,6 @@ Mar 2021
   This second line was added in main
   This third line was added in branchB
   ```
-
-- コーチが結果を確認して OK であること
 
 ***
 
@@ -252,9 +262,9 @@ Mar 2021
 
 ## Exercise 5 達成条件
 
+- コーチが以下を確認して OK であること
 - merge Commit が発生していないこと
 - main と branchC が一番最新 Commit であること
-- コーチが結果を確認して OK であること
 
 ***
 
@@ -289,12 +299,11 @@ Mar 2021
       This first line was added in main
       ```
 
-***
-
 ## Exercise 6 達成条件
 
+- コーチが以下を確認して OK であること
 - remoteRepo.git が bare リポジトリとして初期化されていること
-- origin が remoteRepo.git であること
+- localRepo1 の origin が remoteRepo.git であること
   - コマンドで確認すること
 
     ```PowerShell
@@ -303,7 +312,6 @@ Mar 2021
 
 - Commit が２つあり、最初の Commit は空 Commit であること
 - origin/main と main ブランチの両方が 2つ目の Commit を指していること
-- コーチが結果を確認して OK であること
 
 ***
 
@@ -325,10 +333,10 @@ Mar 2021
     ```
 
 - Exercise 6 のローカルリポジトリで Pull を行い、ClonedRepos内部での更新が反映されたことを確認してください。
-  - VS Code が自動的に Pull している場合は 確認だけで OK です
 
 ## Exercise 7 達成条件
 
+- コーチが以下を確認して OK であること
 - ClonedRepos に remoteRepo フォルダが Git リポジトリとして作成されており、 Commit 履歴が Exercise 6 と同じであること
 - Clone した remoteRepo の origin が Exercise 6 のリモートリポジトリであること
   - コマンドで確認すること
@@ -338,27 +346,102 @@ Mar 2021
     ```
 
 - Exercise 6 の ローカルリポジトリの Commit 履歴が Exercise 7 と同じであること
-- コーチが結果を確認して OK であること
+
+***
 
 # **Exercise 8 - Commit を Revert して Push する**
 
 ## Exercise 8 内容
 
-- aaa
+- localRepo1 で Commit して Push してください。
+  - file4.txt を次の内容に編集して Commit, Push してください。
+
+    ```text
+    This first line was added in main
+    This second line was added in clonedRepo
+    This line will be reverted
+    ```
+
+- ClonedRepos 配下の remoteRepo で Pull して Commit を確認してください。
+- localRepo1 で さきほど Commit した内容を Revert して Push してください。
+- ClonedRepos 配下の remoteRepo で Pull して Commit を確認してください。
 
 ## Exercise 8 達成条件
 
-- aaa
+- コーチが以下を確認して OK であること
+- localRepo1, ClonedRepos 配下の remoteRepo 共に最新の Commit が Revert であること
+- file4.txt の内容が以下であること
 
-# **Exercise 9 - Commit を 取り消す**
+  ```text
+  This first line was added in main
+  This second line was added in clonedRepo
+  ```
+
+***
+
+# **Exercise 9 - Commit を取り消すが編集内容は残す**
 
 ## Exercise 9 内容
 
-- aaa
+- 新しくローカルリポジトリを作成してください。
+  - ローカルリポジトリは C:\gitroot フォルダ配下に作成してください。
+    - ローカルリポジトリ名は secondRepo としてください。
+  - Commit を３つ作ってください。
+  - main の1つ目の Commit は空 Commit にしてください。
+    - Commit メッセージは以下にしてください。
+
+      ```text
+      first commit
+      ```
+
+- 2つ目の Commit について
+  - main ブランチで作業してください。
+  - 新しくファイルを作成してください。
+  - 作成するファイル名は file5.txt としてください。
+  - file5.txt は以下の内容で Commit してください。
+
+    ```text
+    This first line is in file5
+    ```
+
+- 2つ目の Commit から Branch を切ってください。
+  - Branch 名は branchE です。
+
+- 3つ目の Commit について
+  - branchE で 作業してください。
+  - file5.txt を以下の内容に編集して Commit してください。
+
+    ```text
+    This first line is in file5
+    This second line is in branchE
+    ```
+
+- 3つ目の Commit を削除してください。
+- ただし、Workspace に file5.txt の編集結果は残った状態にしてください。
 
 ## Exercise 9 達成条件
 
-- aaa
+- コーチが以下を確認して OK であること
+- file5.txt の内容が以下の通りであること
+
+  ```text
+  This first line is in file5
+    This second line in branchE
+  ```
+
+- Commit 後に reset した結果が残っていること
+  - コマンドで確認
+
+    ```text
+    git reflog
+    ```
+
+- reset 前の状態に戻して reset 前の Commit が正しく行われたことを確認すること
+  - コマンドで確認
+
+    ```text
+    git reset --hard HEAD@{1}
+    ```
 
 ***
 
@@ -366,11 +449,39 @@ Mar 2021
 
 ## Exercise 10 内容
 
-- aaa
+- Exercise 9 の リポジトリを使用します。
+  - ※ コーチの確認によって、reset 前の状態に戻っていることを確認してください。
+- main ブランチに切り替えて file5.txt を以下の内容で編集します。
+
+  ```text
+  This first line is in file5
+  This second line is in main
+  ```
+
+- branchE を main ブランチへ merge してください。
+- Conflict したことを確認してください。
+
+- **Conflict していることをコーチに確認してもらってから先へ進んでください**
+
+- merge を取り消してください。
 
 ## Exercise 10 達成条件
 
-- aaa
+- コーチが以下を確認して OK であること
+- main と branchE が 最初から数えて2番目の Commit で分岐していること
+- main ブランチの file5.txt の内容が以下の通りであること
+
+  ```text
+  This first line is in file5
+  This second line is in main
+  ```
+
+- branchE の file5.txt の内容が以下の通りであること
+
+  ```text
+  This first line is in file5
+    This second line in branchE
+  ```
 
 ***
 
@@ -378,8 +489,43 @@ Mar 2021
 
 ## Exercise 11 内容
 
-- aaa
+- 新しくローカルリポジトリを作成してください。
+  - ローカルリポジトリは C:\gitroot フォルダ配下に作成してください。
+    - ローカルリポジトリ名は thirdRepo としてください。
+  - Commit を３つ作ってください。
+  - main の1つ目の Commit は空 Commit にしてください。
+    - Commit メッセージは以下にしてください。
+
+      ```text
+      first commit
+      ```
+
+- 2つ目の Commit について
+  - main ブランチで作業してください。
+  - 新しくファイルを作成してください。
+  - 作成するファイル名は file6.txt としてください。
+  - file6.txt は以下の内容で Commit してください。
+
+    ```text
+    This is the first line
+    ```
+
+- 3つ目の Commit について
+  - main ブランチで作業してください。
+  - file6.txt を以下の内容で Commit してください。
+
+    ```text
+    This is the first line
+    This is the second line
+    ```
+
+- **Commit が3つできていることをコーチに確認してもらってから先へ進んでください**
+
+- 最初の Commit に対して Branch を作るべきでした。下図と同じ結果となるように Commit を修正してください。
+
+  <img width=230px src="images/gitExercise-Ex11.png" />
 
 ## Exercise 11 達成条件
 
-- aaa
+- コーチが以下を確認して OK であること
+- Commit 履歴が図の通りとなること
