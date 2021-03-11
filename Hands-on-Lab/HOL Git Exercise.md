@@ -289,7 +289,7 @@ Mar 2021
   - ローカルリポジトリとリモートリポジトリを紐づけてください。
     - リモート名は origin としてください。
 
-- 紐づけを確認するためにローカルリポジトリで Commit した結果を Push してください。
+- 紐づけを確認するためにローカルリポジトリで Commit した結果を **Push** してリモートと同期してください。
   - 最初の Commit は空の Commit を入れてください。
     - Commit メッセージは以下にしてください。
 
@@ -338,12 +338,13 @@ Mar 2021
     This second line was added in clonedRepo
     ```
 
-- Exercise 6 のローカルリポジトリで Pull を行い、ClonedRepos内部での更新が反映されたことを確認してください。
+- Exercise 6 のローカルリポジトリで origin/BranchD が存在することを確認したら BranchD を Checkout して編集可能な状態にしてください。
 
 ## Exercise 7 達成条件
 
 - コーチが以下を確認して OK であること
-- ClonedRepos に remoteRepo フォルダが Git リポジトリとして作成されており、 Commit 履歴が Exercise 6 と同じであること
+- ClonedRepos に remoteRepo フォルダが Git リポジトリとして作成されていること
+- Commit 履歴は BranchD と origin/BranchD が最新であること
 - Clone した remoteRepo の origin が Exercise 6 のリモートリポジトリであること
   - コマンドで確認すること
 
@@ -359,7 +360,7 @@ Mar 2021
 
 ## Exercise 8 内容
 
-- localRepo1 で Commit して Push してください。
+- localRepo1 の BranchD にて Commit して Push してください。
   - file4.txt を次の内容に編集して Commit, Push してください。
 
     ```text
@@ -376,7 +377,8 @@ Mar 2021
 
 - コーチが以下を確認して OK であること
 - localRepo1, ClonedRepos 配下の remoteRepo 共に最新の Commit が Revert であること
-- file4.txt の内容が以下であること
+- revert 前の file4.txt の内容が以下であること
+- revert 後の file4.txt の内容が以下であること
 
   ```text
   This first line was added in main
