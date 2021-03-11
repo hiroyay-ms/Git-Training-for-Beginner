@@ -120,7 +120,7 @@ Mar 2021
 
   ```text
   This first line is in file2
-  This line was added in branchA
+  This line was added in BranchA
   ```
 
   - Commit メッセージには作業内容をわかりやすく入力してください。
@@ -142,7 +142,7 @@ Mar 2021
 
   ```text
   This first line is in file2
-  This line was added in branchA
+  This line was added in BranchA
   ```
 
 - main に Commit が３つあり file1.txt の内容が以下の通りであること
@@ -158,15 +158,15 @@ Mar 2021
 
 ## Exercise 3 内容
 
-- Exercise 2 で作成した branchA ブランチを main ブランチへ merge してください。
-- merge 後、 branchA を削除してください。
+- Exercise 2 で作成した BranchA ブランチを main ブランチへ merge してください。
+- merge 後、 BranchA を削除してください。
 
 ## Exercise 3 達成条件
 
 - コーチが以下を確認して OK であること
 - merge が完了すること
   - Conflict が発生しなかったこと（口頭確認）
-- branchA が削除されていること
+- BranchA が削除されていること
 - file1.txt の内容が下記になっていること
 
   ```text
@@ -178,7 +178,7 @@ Mar 2021
 
 ```text
   first line in file2
-  This line was added in branchA
+  This line was added in BranchA
 ```
 
 ***
@@ -203,7 +203,7 @@ Mar 2021
 
     ```text
     This first line was added in main
-    This second line was added in branchB
+    This second line was added in BranchB
     ```
 
 - main ブランチへ切り替えて、file3.txt を次のように編集して　Commit してください。
@@ -211,32 +211,32 @@ Mar 2021
 
     ```text
     This first line was added in main
-    This Second line was added in main
+    This second line was added in main
     ```
 
-- branchB ブランチを main ブランチへ merge してください。
+- BranchB ブランチを main ブランチへ merge してください。
 - file3.txt のConflict を次のように解決してください。
 
     ```text
     This first line was added in main
-    This Second line was added in main
-    This third line was added in branchB
+    This second line was added in main
+    This third line was added in BranchB
     ```
 
 - merge 時の Commit メッセージは適切なものを自分で入力してください。
-- merge 後、 branchB を削除してください。
+- merge 後、 BranchB を削除してください。
 
 ## Exercise 4 達成条件
 
 - コーチが以下を確認して OK であること
 - Conflict を解決して merge が完了したこと
-- branchB が削除されていること
+- BranchB が削除されていること
 - file3.txt の内容が下記になっていること
 
   ```text
   This first line was added in main
   This second line was added in main
-  This third line was added in branchB
+  This third line was added in BranchB
   ```
 
 ***
@@ -253,18 +253,24 @@ Mar 2021
     ```text
     This first line was added in main
     This second line was added in main
-    This third line was added in branchB
-    This forth line was added in branchC
+    This third line was added in BranchB
+    This forth line was added in BranchC
     ```
 
 - main ブランチへ切り替えて BranchC を merge してください。
-- branchC を**削除しないで**残してください。
+- BranchC を**削除しないで**残してください。
 
 ## Exercise 5 達成条件
 
 - コーチが以下を確認して OK であること
-- merge Commit が発生していないこと
-- main と branchC が一番最新 Commit であること
+- Fast-forward merge だったこと
+  - コマンドで確認
+
+    ```text
+    git reflog
+    ```
+
+- main と BranchC が一番最新 Commit であること
 
 ***
 
@@ -324,7 +330,7 @@ Mar 2021
 
 - ローカルリポジトリで作業してリモートへ Push してください。
   - 新しく作成したローカルリポジトリで Branch を作成してください。
-    - Branch 名は branchD としてください。
+    - Branch 名は BranchD としてください。
   - file4.txt を次の内容で編集して Commit して Push してください。
 
     ```text
@@ -405,15 +411,15 @@ Mar 2021
     ```
 
 - 2つ目の Commit から Branch を切ってください。
-  - Branch 名は branchE です。
+  - Branch 名は BranchE です。
 
 - 3つ目の Commit について
-  - branchE で 作業してください。
+  - BranchE で 作業してください。
   - file5.txt を以下の内容に編集して Commit してください。
 
     ```text
     This first line is in file5
-    This second line is in branchE
+    This second line is in BranchE
     ```
 
 - 3つ目の Commit を削除してください。
@@ -426,7 +432,7 @@ Mar 2021
 
   ```text
   This first line is in file5
-    This second line in branchE
+    This second line in BranchE
   ```
 
 - Commit 後に reset した結果が残っていること
@@ -458,7 +464,7 @@ Mar 2021
   This second line is in main
   ```
 
-- branchE を main ブランチへ merge してください。
+- BranchE を main ブランチへ merge してください。
 - Conflict したことを確認してください。
 
 - **Conflict していることをコーチに確認してもらってから先へ進んでください**
@@ -468,7 +474,7 @@ Mar 2021
 ## Exercise 10 達成条件
 
 - コーチが以下を確認して OK であること
-- main と branchE が 最初から数えて2番目の Commit で分岐していること
+- main と BranchE が 最初から数えて2番目の Commit で分岐していること
 - main ブランチの file5.txt の内容が以下の通りであること
 
   ```text
@@ -476,11 +482,11 @@ Mar 2021
   This second line is in main
   ```
 
-- branchE の file5.txt の内容が以下の通りであること
+- BranchE の file5.txt の内容が以下の通りであること
 
   ```text
   This first line is in file5
-    This second line in branchE
+    This second line in BranchE
   ```
 
 ***
@@ -523,7 +529,7 @@ Mar 2021
 
 - 最初の Commit に対して Branch を作るべきでした。下図と同じ結果となるように Commit を修正してください。
 
-  <img width=230px src="images/gitExercise-Ex11.png" />
+  <img width=230px src="images-exercise/gitExercise-Ex11.png" />
 
 ## Exercise 11 達成条件
 
