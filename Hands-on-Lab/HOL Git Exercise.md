@@ -424,17 +424,18 @@ Mar 2021
     This second line is in BranchE
     ```
 
-- 3つ目の Commit を削除してください。
+- 3つ目の Commit を reset で削除してください。
 - ただし、Workspace に file5.txt の編集結果は残った状態にしてください。
 
 ## Exercise 9 達成条件
 
 - コーチが以下を確認して OK であること
+- file5.txt への変更が Stage 前の状態であること
 - file5.txt の内容が以下の通りであること
 
   ```text
   This first line is in file5
-    This second line in BranchE
+  This second line in BranchE
   ```
 
 - Commit 後に reset した結果が残っていること
@@ -459,7 +460,7 @@ Mar 2021
 
 - Exercise 9 の リポジトリを使用します。
   - ※ コーチの確認によって、reset 前の状態に戻っていることを確認してください。
-- main ブランチに切り替えて file5.txt を以下の内容で編集します。
+- main ブランチに切り替えて file5.txt を以下の内容で編集して Commit してください。
 
   ```text
   This first line is in file5
@@ -477,6 +478,13 @@ Mar 2021
 
 - コーチが以下を確認して OK であること
 - main と BranchE が 最初から数えて2番目の Commit で分岐していること
+- 最後の Commit への操作が reset であること
+  - コマンドで確認
+
+    ```text
+    git reflog
+    ```
+
 - main ブランチの file5.txt の内容が以下の通りであること
 
   ```text
@@ -488,7 +496,7 @@ Mar 2021
 
   ```text
   This first line is in file5
-    This second line in BranchE
+  This second line in BranchE
   ```
 
 ***

@@ -138,10 +138,82 @@ Mar 2021
 
 # **Exercise 9 回答**
 
+- file5.txt への変更が Stage 前の状態であること
+
+  <img width=500 src="images-exercise/gitExercise-Ans09-01.png" />
+
+- file5.txt の内容が以下の通りであること
+
+   <img width=320 src="images-exercise/gitExercise-Ans09-02.png" />
+
+- Commit 後に reset した結果が残っていること
+
+  <img width=750 src="images-exercise/gitExercise-Ans09-03.png" />
+
+- reset 前の状態に戻して reset 前の Commit が正しく行われたことを確認すること
+  - コマンドで reset した後の Commit 履歴が以下であること
+
+    <img width=320 src="images-exercise/gitExercise-Ans09-04.png" />
+
+  - file5.txt の内容が以下であること
+
+   <img width=280 src="images-exercise/gitExercise-Ans09-05.png" />
+
+
 ***
 
 # **Exercise 10 回答**
 
+- Conflict したことを確認
+
+  <img width=650 src="images-exercise/gitExercise-Ans10-01.png" />
+
+- Merge の取り消しの確認
+  - main と BranchE が 最初から数えて2番目の Commit で分岐していること
+
+   <img width=280 src="images-exercise/gitExercise-Ans10-02.png" />
+
+  - 最後の Commit への操作が reset であること
+
+    <img width=650 src="images-exercise/gitExercise-Ans10-03.png" />
+
+  - main ブランチの file5.txt の内容が以下の通りであること
+
+    <img width=280 src="images-exercise/gitExercise-Ans10-04.png" />
+
+  - BranchE の file5.txt の内容が以下の通りであること
+
+    <img width=280 src="images-exercise/gitExercise-Ans10-05.png" />
+
 ***
 
 # **Exercise 11 回答**
+
+- Commit が３つ状態の確認
+
+  <img width=280 src="images-exercise/gitExercise-Ans11-01.png" />
+
+- Branch の切り忘れ時の方法
+  1. 最新の Commit に対して BranchF を切る 
+
+    <img width=380 src="images-exercise/gitExercise-Ans11-02.png" />
+
+  2. main ブランチへ移動
+
+    <img width=380 src="images-exercise/gitExercise-Ans11-03.png" />
+
+  3. first commit を指定して reset
+
+    <img width=380 src="images-exercise/gitExercise-Ans11-04.png" />
+
+  4. reset オプションは hard を指定
+
+    <img width=380 src="images-exercise/gitExercise-Ans11-05.png" />
+
+  5. main にいるので、 BranchF へ移動
+
+    <img width=230 src="images-exercise/gitExercise-Ans11-06.png" />
+
+  6. 完了
+
+   <img width=230 src="images-exercise/gitExercise-Ans11-07.png" />
