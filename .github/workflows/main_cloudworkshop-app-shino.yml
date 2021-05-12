@@ -1,0 +1,42 @@
+# Docs for the Azure Web Apps Deploy action: https://go.microsoft.com/fwlink/?linkid=2134798
+# More GitHub Actions for Azure: https://go.microsoft.com/fwlink/?linkid=2135048
+
+name: Azure App Service - CloudWorkshop-app-shino(Production), Build and deploy DotnetCore app
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  APP_PATH: './src/Web'
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+
+    steps:
+    # checkout the repo
+    - name: 'Checkout Github Action'
+      uses: actions/checkout@master
+
+
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.301'
+
+    - name: Build with dotnet
+      run: dotnet build ${{ env.APP_PATH }} --configuration Release
+
+    - name: dotnet publish
+      run: dotnet publish ${{ env.APP_PATH }} -c Release -o ${{env.DOTNET_ROOT}}/myapp
+
+    - name: Run Azure webapp deploy action using publish profile credentials
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: CloudWorkshop-app-shino
+        slot-name: Production
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5AC80B9A07C2489BA2703406E409862E }}
+        package: ${{env.DOTNET_ROOT}}/myapp
+
